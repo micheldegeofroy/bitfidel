@@ -36,16 +36,6 @@ window.onkeydown = function(e) {
 	
 <div id="shareBlock"  style="display:none">
 
-
-
-
-
-
-	
-    </table>
-
-    <div id="currentScore" style="display:none"></div>
-    <div id="fb-root"></div>
     <script>
         function LoadAllJs() {
             fileref=document.createElement('script');
@@ -70,8 +60,6 @@ window.onkeydown = function(e) {
             js.src = "http://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v9.0&appId=793583864096070&autoLogAppEvents=1";
             fjs.parentNode.insertBefore(js, fjs);
         }(document, 'script', 'facebook-jssdk'));
-
-        
 
         function shareScore(platform) {
             var c=document.getElementsByClassName("runner-canvas");
