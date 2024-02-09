@@ -61,33 +61,7 @@ window.onkeydown = function(e) {
             fjs.parentNode.insertBefore(js, fjs);
         }(document, 'script', 'facebook-jssdk'));
 
-        function shareScore(platform) {
-            var c=document.getElementsByClassName("runner-canvas");
-            var cnvs=document.createElement('canvas');
-            var ctx = cnvs.getContext('2d');
-            var cscr=document.getElementById("currentScore");
-            cnvs.width=600;
-            cnvs.height=320;
-            ctx.drawImage(c[0], 0, 85);
-            $.ajax({
-                type: "POST",
-                url: "/game.php",
-                data: { act:"storeimg", img_data:cnvs.toDataURL()},
-                cache: false,
-                contentType: "application/x-www-form-urlencoded",
-                success: function (result) {
-                    if (platform == 'fb') {
-                        FB.ui({
-                            method: 'share',
-                            href: 'https://chromedino.com/game.php?act=sharepage&score='+cscr.textContent+'&scoreimg='+result,
-                        }, function(response){});
-                    } else if (platform == 'tw') {
-                        var mtitle='I scored '+cscr.textContent+' in T-Rex game online - ';
-                        window.open("https://twitter.com/share?url="+escape('https://chromedino.com/game.php?act=sharepage&amp;score='+cscr.textContent+'&scoreimg='+result)+"&text="+mtitle, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');return false;
-                    }
-                }
-            });
-        }
+        
     </script>
 </div>
 
