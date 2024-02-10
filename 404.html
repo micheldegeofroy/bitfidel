@@ -36,17 +36,19 @@ window.onkeydown = function(e) {
 	
 <div id="shareBlock"  style="display:none">
 
-	<script>
+<!-- <script>
+    // This function was originally used to load external JS, like the Twitter widget, which has been removed.
     function LoadAllJs() {
-        // This function was originally used to load the Twitter widget JS, which we've now removed.
+        // Function body was here.
     }
     // Check for browser support of event handling capability
     if (window.addEventListener)
-        window.addEventListener("load", LoadAllJs, false);
+        window.addEventListener("load", LoadAllJs, false); // Add event listener for 'load' event
     else if (window.attachEvent)
-        window.attachEvent("onload", LoadAllJs);
-    else window.onload = LoadAllJs;
-</script>
+        window.attachEvent("onload", LoadAllJs); // For older IE versions
+    else window.onload = LoadAllJs; // Fallback method for older browsers
+</script> -->
+
 <script>
 	function setupAudioElement() {
     var audioElement = document.getElementById('offline-sound-press');
